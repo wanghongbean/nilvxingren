@@ -11,8 +11,12 @@
 
 主线程用于prodcer，另起多个consumer线程。
 
+![核心类图](https://github.com/wanghongbean/nilvxingren/blob/master/img/SingleProducerMultiConsumer.png)
+
 > **how**
 
 1. 实现ProducerHandler和ConsumerHandler 处理生产数据的业务和消费数据的业务
 2. 根据实际业务指定阻塞队列size、消费者线程数
+
+
 
