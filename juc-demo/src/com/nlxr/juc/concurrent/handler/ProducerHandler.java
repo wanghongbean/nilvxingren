@@ -1,4 +1,4 @@
-package com.nlxr.juc.handler;
+package com.nlxr.juc.concurrent.handler;
 
 import java.util.concurrent.LinkedBlockingQueue;
 

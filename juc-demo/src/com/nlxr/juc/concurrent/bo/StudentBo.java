@@ -1,4 +1,4 @@
-package com.nlxr.juc.bo;
+package com.nlxr.juc.concurrent.bo;
 
 import java.util.Objects;
 

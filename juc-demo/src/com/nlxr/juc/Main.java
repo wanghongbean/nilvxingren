@@ -1,9 +1,9 @@
 package com.nlxr.juc;
 
-import com.nlxr.juc.bo.StudentBo;
-import com.nlxr.juc.handler.ConsumerHandler;
-import com.nlxr.juc.handler.ProducerHandler;
-import com.nlxr.juc.thread.SingleProducerMultiConsumer;
+import com.nlxr.juc.concurrent.bo.StudentBo;
+import com.nlxr.juc.concurrent.handler.ConsumerHandler;
+import com.nlxr.juc.concurrent.handler.ProducerHandler;
+import com.nlxr.juc.concurrent.thread.SingleProducerMultiConsumer;
 
 import java.util.ArrayList;
 import java.util.List;

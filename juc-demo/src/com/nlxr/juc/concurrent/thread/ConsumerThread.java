@@ -1,6 +1,6 @@
-package com.nlxr.juc.thread;
+package com.nlxr.juc.concurrent.thread;
 
-import com.nlxr.juc.handler.ConsumerHandler;
+import com.nlxr.juc.concurrent.handler.ConsumerHandler;
 
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.LinkedBlockingQueue;
