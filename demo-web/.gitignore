@@ -3,7 +3,6 @@ target/
 classes
 out/
 production/
-.mvn/
 
 # IDEA artifacts and output dirs
 *.iml
