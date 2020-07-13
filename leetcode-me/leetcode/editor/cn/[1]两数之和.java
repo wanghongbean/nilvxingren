@@ -18,7 +18,7 @@
 import java.util.HashMap;
 
 //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+class SolutionTwoSum {
     public int[] twoSum(int[] nums, int target) {
         //时间复杂度 O(n^2) 空间复杂度 O(1)
 //        for (int i = 0; i < nums.length; i++) {
