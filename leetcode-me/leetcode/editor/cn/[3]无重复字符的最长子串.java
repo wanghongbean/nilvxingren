@@ -26,9 +26,12 @@
 
 
 //leetcode submit region begin(Prohibit modification and deletion)
-//class Solution {
-//    public int lengthOfLongestSubstring(String s) {
-//
-//    }
-//}
+class Solution {
+    public int lengthOfLongestSubstring(String s) {
+        int l = s.length();
+        for(int start=0,end=0;end<l;end++){
+            s.substring();
+        }
+    }
+}
 //leetcode submit region end(Prohibit modification and deletion)
