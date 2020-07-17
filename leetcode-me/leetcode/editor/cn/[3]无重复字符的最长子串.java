@@ -29,8 +29,13 @@
 class Solution {
     public int lengthOfLongestSubstring(String s) {
         int l = s.length();
+        int res = 0;
+        Map<Char,Integer> map = new hashMap();
         for(int start=0,end=0;end<l;end++){
-            s.substring();
+            Char endTemp = s.charAt(end);
+            if (map.containKey()){
+
+            }
         }
     }
 }
