@@ -1,0 +1,26 @@
+# maven
+target/
+classes
+out/
+production/
+.mvn/
+mvnw/
+
+# IDEA artifacts and output dirs
+*.iml
+*.ipr
+*.iws
+*.idea
+
+# eclipse
+*.classpath
+*.project
+*.prefs
+.settings
+.metadata
+.recommenders
+RemoteSystemsTempFiles
+
+
+# mac
+.DS_Store
