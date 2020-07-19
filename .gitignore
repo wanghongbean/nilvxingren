@@ -20,3 +20,5 @@ production/
 RemoteSystemsTempFiles
 # mac
 .DS_Store
+#vscode
+.vscode/
