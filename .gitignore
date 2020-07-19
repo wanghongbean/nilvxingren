@@ -4,13 +4,12 @@ classes
 out/
 production/
 .mvn/
-
 # IDEA artifacts and output dirs
 *.iml
 *.ipr
 *.iws
 *.idea
-
+*.svn
 # eclipse
 *.classpath
 *.project
@@ -19,7 +18,5 @@ production/
 .metadata
 .recommenders
 RemoteSystemsTempFiles
-
-
 # mac
 .DS_Store
