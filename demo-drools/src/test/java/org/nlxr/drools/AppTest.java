@@ -1,4 +1,4 @@
-package org.example;
+package org.nlxr.drools;
 
 import static org.junit.Assert.assertTrue;
 

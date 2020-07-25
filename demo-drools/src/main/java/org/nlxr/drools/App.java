@@ -1,4 +1,4 @@
-package org.example;
+package org.nlxr.drools;
 
 /**
  * Hello world!
