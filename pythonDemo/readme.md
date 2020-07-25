@@ -4,4 +4,5 @@
 # beautifulsoup 安装
 pip3 install beautifulsoup4
 pip3 install lxml # 安装时timeout
+pip3 install aiohttp
 ```
