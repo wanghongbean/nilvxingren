@@ -49,7 +49,7 @@ public class RequestLimiterInterceptor implements HandlerInterceptor {
                         return true;
                     } else {
                         LOG.warn("请求被限流,url:{}", request.getServletPath());
-                        throw new Exception("服务器繁忙");
+//                        throw new Exception("服务器繁忙");
                     }
                 }
             }
