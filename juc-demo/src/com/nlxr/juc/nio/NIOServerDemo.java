@@ -3,11 +3,15 @@ package com.nlxr.juc.nio;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.io.OutputStream;
 import java.net.InetSocketAddress;
+import java.net.Socket;
 import java.nio.ByteBuffer;
 import java.nio.channels.*;
+import java.nio.charset.StandardCharsets;
 import java.util.Iterator;
 import java.util.Set;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @Author labu
@@ -21,7 +25,7 @@ public class NIOServerDemo {
         //创建一个服务端channel，绑定一个sockey对象，并把这个通信信道注册到选择器上，设置为非阻塞模式
         ServerSocketChannel ssc = ServerSocketChannel.open();
         ssc.configureBlocking(false);//非阻塞模式
-        ssc.socket().bind(new InetSocketAddress(8888));
+        ssc.socket().bind(new InetSocketAddress("127.0.0.1",8888));
         ssc.register(selector, SelectionKey.OP_ACCEPT);//注册监听事件
         while (true){
             //检查已经注册在这个选择器上的所有通信信道是否有需要的事件发生，
@@ -41,6 +45,7 @@ public class NIOServerDemo {
                     it.remove();
                 }else if ((key.readyOps()&SelectionKey.OP_READ) == SelectionKey.OP_READ){
                     SocketChannel channel = (SocketChannel)key.channel();
+                    StringBuilder data = new StringBuilder();
                     while (true){
                         buffer.clear();
                         int n = channel.read(buffer);
@@ -48,7 +53,15 @@ public class NIOServerDemo {
                             break;
                         }
                         buffer.flip();
+                        int limit = buffer.limit();
+                        char[] dst = new char[limit];
+                        for (int i = 0; i < limit; i++) {
+                            dst[i] = (char)buffer.get(i);
+                        }
+                        data.append(dst);
+                        buffer.clear();
                     }
+                    System.out.println("server read client data: "+data.toString());
                     it.remove();
                 }
             }
@@ -57,10 +70,20 @@ public class NIOServerDemo {
     }
 
     @Test
+    public void nioClient() throws IOException, InterruptedException {
+        Socket socket = new Socket("127.0.0.1", 8888);
+        OutputStream out = socket.getOutputStream();
+        out.write("hello nio".getBytes(StandardCharsets.UTF_8));
+        out.close();
+        socket.close();
+        TimeUnit.SECONDS.sleep(10);
+    }
+
+    @Test
     public void test_num(){
-        System.out.println(SelectionKey.OP_READ);
-        System.out.println(SelectionKey.OP_ACCEPT);
-        System.out.println(SelectionKey.OP_WRITE);
-        System.out.println(SelectionKey.OP_CONNECT);
+        System.out.println(SelectionKey.OP_READ+ " === " + Integer.toBinaryString(SelectionKey.OP_READ));
+        System.out.println(SelectionKey.OP_WRITE+ " === " + Integer.toBinaryString(SelectionKey.OP_WRITE));
+        System.out.println(SelectionKey.OP_CONNECT+ " === " + Integer.toBinaryString(SelectionKey.OP_CONNECT));
+        System.out.println(SelectionKey.OP_ACCEPT+ " === " + Integer.toBinaryString(SelectionKey.OP_ACCEPT));
     }
 }
